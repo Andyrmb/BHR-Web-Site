@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/empresas", "destination": "/nosotros", "permanent": true },
+    { "source": "/quienes-prestamos-los-servicios", "destination": "/nosotros", "permanent": true },
+    { "source": "/politica-de-privacidad", "destination": "/politica-de-datos", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/pavimentos-y-asfalto", "destination": "/pavimentos", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "constructorabhr.com" }], "destination": "https://www.constructorabhr.com/:path*", "permanent": true }
+  ]
+}
