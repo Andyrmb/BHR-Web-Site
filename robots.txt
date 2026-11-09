@@ -1,0 +1,6 @@
+# robots.txt · BHR Constructores S.A.S. · https://www.bhr.com.co
+User-agent: *
+Allow: /
+Disallow: /*?*utm_
+
+Sitemap: https://www.bhr.com.co/sitemap.xml
