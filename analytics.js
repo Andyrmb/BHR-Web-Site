@@ -1,20 +1,27 @@
 /* =====================================================================
    BHR Constructores · Medición (Google Analytics 4) · archivo único
    1) Cree su propiedad GA4 en https://analytics.google.com (gratis).
-   2) Copie su "ID de medición" (empieza por G-) y péguelo abajo.
+   2) Copie el ID de la etiqueta de Google (GTM-...) o el ID de medición (G-...) y péguelo abajo.
    3) Suba este archivo a GitHub. No hay que tocar ninguna página .html.
    ===================================================================== */
-var BHR_GA4_ID = "G-XXXXXXXXXX";   // <-- PEGUE AQUÍ SU ID DE MEDICIÓN GA4
+var BHR_GA4_ID = "GTM-W8KQN9PS";   // <-- ID de la etiqueta de Google (GTM-...) o de medición GA4 (G-...)
 
 (function () {
-  if (!/^G-[A-Z0-9]{6,}$/.test(BHR_GA4_ID) || BHR_GA4_ID === "G-XXXXXXXXXX") return; // sin ID: no mide nada
-  var s = document.createElement("script");
-  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + BHR_GA4_ID;
-  document.head.appendChild(s);
+  var id = BHR_GA4_ID;
+  var esGTM = /^GTM-[A-Z0-9]{4,}$/.test(id), esG = /^G-[A-Z0-9]{6,}$/.test(id) && id !== "G-XXXXXXXXXX";
+  if (!esGTM && !esG) return; // sin ID válido: no mide nada
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); };
   gtag("js", new Date());
-  gtag("config", BHR_GA4_ID);
+  var s = document.createElement("script");
+  s.async = true;
+  if (esGTM) {
+    s.src = "https://www.googletagmanager.com/gtm.js?id=" + id;   // etiqueta de Google (incluye GA4)
+  } else {
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+    gtag("config", id);
+  }
+  document.head.appendChild(s);
 
   /* Conversiones: formulario enviado (Web3Forms) y solicitud de maquinaria por WhatsApp */
   window.addEventListener("bhr:lead", function (e) {
