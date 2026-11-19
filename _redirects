@@ -1,0 +1,7 @@
+# Redirecciones para Cloudflare Pages (en Vercel se usa vercel.json)
+/index /  301
+/empresas /nosotros 301
+/quienes-prestamos-los-servicios /nosotros 301
+/pavimentos-y-asfalto /pavimentos 301
+/requisitos-para-contratar-obra-publica-en-colombia /concesiones-y-contratistas 301
+/politica-de-privacidad /politica-de-datos 301
