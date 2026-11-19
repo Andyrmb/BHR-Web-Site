@@ -4,7 +4,7 @@
    2) Copie el ID de la etiqueta de Google (GTM-...) o el ID de medición (G-...) y péguelo abajo.
    3) Suba este archivo a GitHub. No hay que tocar ninguna página .html.
    ===================================================================== */
-var BHR_GA4_ID = "GTM-W8KQN9PS";   // <-- ID de la etiqueta de Google (GTM-...) o de medición GA4 (G-...)
+var BHR_GA4_ID = "G-Q1VJEFEECM";   // <-- ID de la etiqueta de Google (GTM-...) o de medición GA4 (G-...)
 
 (function () {
   var id = BHR_GA4_ID;
